@@ -12,6 +12,10 @@
 # Output of the go coverage tool
 *.out
 
+# Output of go tool pprof
+*.prof
+*.svg
+
 # IDE
 .idea/
 .vscode/
