@@ -1,1 +1,3 @@
 geek_time_go_learning Go语言从入门到实战
+
+geek_time_go_puzzlers Go语言核心
