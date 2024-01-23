@@ -5,11 +5,11 @@ import "fmt"
 var container = []string{"zero", "one", "two"}
 
 func getElement(containerI interface{}) (element string, err error) {
-	switch container := containerI.(type) {
+	switch t := containerI.(type) {
 	case []string:
-		element = container[1]
+		element = t[1]
 	case map[int]string:
-		element = container[1]
+		element = t[1]
 	default:
 		err = fmt.Errorf("unsupported container type: %T", containerI)
 		return
@@ -42,19 +42,21 @@ func main() {
 		string表示字符串类型的字面量，uint8表示8位无符号整数类型的字面量
 		[]string表示元素类型为string的切片类型
 		map[int]string表示键类型为int、值类型为string的字典类型
-	 */
+	*/
 	_, ok1 := interface{}(container).([]string)
 	_, ok2 := interface{}(container).(map[int]string)
 	if !(ok1 || ok2) {
 		fmt.Printf("Error: unsupported container type: %T\n", container)
 		return
 	}
-	fmt.Printf("The element is %q. (container type: %T)\n", container[1], container)
+	fmt.Printf("The element is %q. (container type: %T)\n",
+		container[1], container)
 
 	element, err := getElement(container)
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
 		return
 	}
-	fmt.Printf("The element is %q, (container type: %T)\n", element, container)
+	fmt.Printf("The element is %q, (container type: %T)\n",
+		element, container)
 }

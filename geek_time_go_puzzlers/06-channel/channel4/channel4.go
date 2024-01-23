@@ -29,17 +29,17 @@ func main() {
 	_ = GetIntChannel(getIntChannel)
 }
 
-//示例2
+// 示例2
 func SendInt(ch chan<- int) {
 	ch <- rand.Intn(1000)
 }
 
-//示例3
+// 示例3
 type Notifier interface {
 	SendInt(ch chan<- int)
 }
 
-//示例4
+// 示例4
 func getIntChannel() <-chan int {
 	num := 5
 	ch := make(chan int, num)
@@ -49,6 +49,6 @@ func getIntChannel() <-chan int {
 	close(ch)
 	return ch
 }
-		
-//示例5
+
+// 示例5
 type GetIntChannel func() <-chan int

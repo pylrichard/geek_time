@@ -2,18 +2,15 @@ package main
 
 import "fmt"
 
-/*
-	type newType = Type 定义类型Type的别名newType
-	type newType Type 定义新类型newType
-
-	type MyString2 string //注意这里没有等号
-	MyString2和string是两个不同的类型，MyString2是一个新的类型，不同于其他任何类型
-	这种方式叫对类型的再定义，需要尽量避免
-	string可以被称为MyString2的潜在类型。潜在类型的含义是某个类型在本质上是哪个类型或者是哪个类型的集合
-	潜在类型相同的不同类型的值之间是可以进行类型转换的。因此MyString2类型的值与string类型的值可以使用类型转换表达式进行互转
-	集合类的类型[]MyString2与[]string这样做是不合法的，因为[]MyString2与[]string的潜在类型不同，分别是MyString2和string
-	另外即使两个类型的潜在类型相同，它们的值之间也不能进行判等或比较，它们的变量之间也不能赋值
- */
+// type newType = Type 定义类型Type的别名newType
+// type newType Type 定义新类型newType
+// type MyString2 string //注意这里没有等号
+// MyString2和string是两个不同的类型，MyString2是一个新的类型，不同于其他任何类型
+// 这种方式叫对类型的再定义，需要尽量避免
+// string可以被称为MyString2的潜在类型。潜在类型的含义是某个类型在本质上是哪个类型或者是哪个类型的集合
+// 潜在类型相同的不同类型的值之间是可以进行类型转换的。因此MyString2类型的值与string类型的值可以使用类型转换表达式进行互转
+// 集合类的类型[]MyString2与[]string这样做是不合法的，因为[]MyString2与[]string的潜在类型不同，分别是MyString2和string
+// 另外即使两个类型的潜在类型相同，它们的值之间也不能进行判等或比较，它们的变量之间也不能赋值
 func main() {
 	/*
 		示例1
@@ -22,7 +19,7 @@ func main() {
 		MyString是string类型的别名类型，别名类型与其源类型的区别只是名称
 		源类型与别名类型是一对概念，是两个对立的称呼。别名类型主要是为了代码重构而存在的
 		Go语言内建的基本类型中存在两个别名类型。byte是uint8的别名类型，rune是int32的别名类型
-	 */
+	*/
 	{
 		type MyString = string
 		str := "BCD"
@@ -43,7 +40,7 @@ func main() {
 	}
 	/*
 		示例2
-	 */
+	*/
 	{
 		type MyString string
 		str := "BCD"
@@ -69,7 +66,7 @@ func main() {
 	}
 	/*
 		示例3
-	 */
+	*/
 	{
 		type MyString1 = string
 		type MyString2 string
@@ -81,7 +78,7 @@ func main() {
 
 		myStr1 = str
 		//这里的赋值不合法，会引发编译错误
-		//myStr2 = str 
+		//myStr2 = str
 		//myStr1 = myStr2
 		//myStr2 = myStr1
 	}

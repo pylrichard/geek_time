@@ -13,5 +13,5 @@ func main() {
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 	}
-	fmt.Printf("%d bytes write\n", num)
+	fmt.Printf("%d bytes were written\n", num)
 }

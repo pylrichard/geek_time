@@ -2,12 +2,10 @@ package main
 
 import "fmt"
 
-/*
-	类型转换表达式的语法形式是T(x)，x可以是一个变量，可以是一个代表值的字面量(比如1.23和struct{})，可以是一个表达式
-	表达式的结果只能是一个值，而不能是多个值
-	x叫做源值，它的类型就是源类型，而T代表的类型就是目标类型
-	在语言规范或其他官方文档中已经说明在编程语言层面很难检测的东西才是应该关注的
- */
+// 类型转换表达式的语法形式是T(x)，x可以是一个变量，可以是一个代表值的字面量(比如1.23和struct{})，可以是一个表达式
+// 表达式的结果只能是一个值，而不能是多个值
+// x叫做源值，它的类型就是源类型，而T代表的类型就是目标类型
+// 在语言规范或其他官方文档中已经说明在编程语言层面很难检测的东西才是应该关注的
 func main() {
 	/*
 		重点1的示例
@@ -19,18 +17,19 @@ func main() {
 		从而得到00000001。又由于其最左边一位是0，表示它是正整数，正整数的补码等于其原码，所以dstInt的值就是1
 		当整数值的类型的有效范围由宽变窄时，只需在补码形式下截掉一定数量的高位二进制数即可
 		类似规则还有：把一个浮点数类型的值转换为整数类型值时，前者的小数部分会被全部截掉
-	 */
+	*/
 	var srcInt = int16(-255)
 	/*
 		执行uint16(srcInt)是因为只有这样才能得到全二进制的表示
 		例如fmt.Printf("%b", srcInt)将打印出"-11111111"，后者是负数符号再加上srcInt的绝对值的补码
 		而fmt.Printf("%b", uint16(srcInt))才会打印出srcInt原值的补码"1111111100000001"
-	 */
+	*/
 	fmt.Printf("The complement of srcInt: %d %b (%b)\n",
 		uint16(srcInt), uint16(srcInt), srcInt)
 	dstInt := int8(srcInt)
 	fmt.Printf("The complement of dstInt: %b (%b)\n",
 		uint8(dstInt), dstInt)
+	fmt.Printf("The value of dstInt: %d\n", dstInt)
 	fmt.Println()
 
 	/*
@@ -40,7 +39,7 @@ func main() {
 		字符"�"的Unicode代码点是U+FFFD。它是Unicode标准中定义的Replacement Character
 		专用于替换那些未知的、不被认可的以及无法展示的字符
 		比如string(-1)，-1无法代表一个有效的Unicode代码点，所以得到的总会是"�"
-	 */
+	*/
 	fmt.Printf("The Replacement Character: %s\n", string(-1))
 	fmt.Printf("The Unicode codepoint of Replacement Character: %U\n", '�')
 	fmt.Println()
@@ -54,7 +53,7 @@ func main() {
 
 		一个值在从string类型向[]rune类型转换时代表着字符串会被拆分成一个个Unicode字符
 		string([]rune{'\u4F60', '\u597D'})//你好
-	 */
+	*/
 	srcStr := "你好"
 	fmt.Printf("The string: %q\n", srcStr)
 	fmt.Printf("The hex of %q: %x\n", srcStr, srcStr)
