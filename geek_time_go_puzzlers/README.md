@@ -18,3 +18,5 @@
 | 18-if语句、for语句和switch语句 | 12-process_control |
 | 19-错误处理 | 13-error/1-2 |
 | 20-错误处理 | 13-error/3 |
+| 21-panic函数、recover函数以及defer语句 | 14-panic/1-3 |
+| 22-panic函数、recover函数以及defer语句 | 14-panic/4-5 |
