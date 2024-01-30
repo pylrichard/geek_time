@@ -20,3 +20,6 @@
 | 20-错误处理 | 13-error/3 |
 | 21-panic函数、recover函数以及defer语句 | 14-panic/1-3 |
 | 22-panic函数、recover函数以及defer语句 | 14-panic/4-5 |
+| 23-测试的基本规则和流程 | 15-test |
+| 24-测试的基本规则和流程 | 15-test |
+| 25-更多的测试手法 |  |
