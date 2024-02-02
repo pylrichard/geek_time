@@ -26,3 +26,5 @@
 | 26-sync.Mutex与sync.RWMutex | 16-mutex |
 | 27-条件变量sync.Cond | 17-cond |
 | 28-条件变量sync.Cond | 17-cond |
+| 29-原子操作 | 18-atomic |
+| 30-原子操作 | 18-atomic |
