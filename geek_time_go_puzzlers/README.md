@@ -24,7 +24,8 @@
 | 24-测试的基本规则和流程 | 15-test/1 |
 | 25-更多的测试手法 | 15-test/2 |
 | 26-sync.Mutex与sync.RWMutex | 16-mutex |
-| 27-条件变量sync.Cond | 17-cond |
-| 28-条件变量sync.Cond | 17-cond |
-| 29-原子操作 | 18-atomic |
-| 30-原子操作 | 18-atomic |
+| 27-条件变量sync.Cond | 17-cond/1 |
+| 28-条件变量sync.Cond | 17-cond/2 |
+| 29-原子操作 | 18-atomic/1 |
+| 30-原子操作 | 18-atomic/2 |
+| 31-sync.WaitGroup和sync.Once | 19-wait_group & once |
