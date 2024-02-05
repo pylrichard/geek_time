@@ -30,3 +30,4 @@
 | 30-原子操作 | 18-atomic/2 |
 | 31-sync.WaitGroup和sync.Once | 19-wait_group & once |
 | 32-context.Context类型 | 20-context |
+| 33-临时对象池sync.Pool | 21-sync_pool |
