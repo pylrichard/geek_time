@@ -31,5 +31,6 @@
 | 31-sync.WaitGroup和sync.Once | 19-wait_group & once |
 | 32-context.Context类型 | 20-context |
 | 33-临时对象池sync.Pool | 21-sync_pool |
-| 34-并发安全字典sync.Map | 22-sync_map |
-| 35-并发安全字典sync.Map | 22-sync_map |
+| 34-并发安全字典sync.Map | 22-sync_map/1 |
+| 35-并发安全字典sync.Map | 22-sync_map/2 |
+| 36-unicode与字符编码 |  |
