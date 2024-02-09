@@ -33,4 +33,7 @@
 | 33-临时对象池sync.Pool | 21-sync_pool |
 | 34-并发安全字典sync.Map | 22-sync_map/1 |
 | 35-并发安全字典sync.Map | 22-sync_map/2 |
-| 36-unicode与字符编码 |  |
+| 36-unicode与字符编码 | 23-unicode |
+| 37-strings包与字符串操作 | 24-string |
+| 38-bytes包与字节串操作 | 25-bytes/1-2 |
+| 39-bytes包与字节串操作 | 25-bytes/3 |
