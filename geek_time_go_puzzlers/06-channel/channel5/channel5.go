@@ -11,9 +11,9 @@ func main() {
 	example2()
 }
 
-//示例1
+// 示例1
 func example1() {
-	intChannels := [3]chan int {
+	intChArr := [3]chan int{
 		make(chan int, 1),
 		make(chan int, 1),
 		make(chan int, 1),
@@ -21,29 +21,29 @@ func example1() {
 	//随机选择一个通道，并向它发送元素值
 	index := rand.Intn(3)
 	fmt.Printf("The index: %d\n", index)
-	intChannels[index] <- index
+	intChArr[index] <- index
 	//哪一个通道中有可取的元素值，哪个对应的分支就会被执行
 	select {
-	case <-intChannels[0]:
+	case <-intChArr[0]:
 		fmt.Println("The first candidate case is selected.")
-	case <-intChannels[1]:
+	case <-intChArr[1]:
 		fmt.Println("The second candidate case is selected.")
-	case elem := <-intChannels[2]:
+	case elem := <-intChArr[2]:
 		fmt.Printf("The third candidate case is selected, the element is %d.\n", elem)
 	default:
 		fmt.Println("No candidate case is selected!")
 	}
 }
 
-//示例2
+// 示例2
 func example2() {
-	intChannel := make(chan int, 1)
+	intCh := make(chan int, 1)
 	//1s后关闭通道
 	time.AfterFunc(time.Second, func() {
-		close(intChannel)
+		close(intCh)
 	})
 	select {
-	case _, ok := <-intChannel:
+	case _, ok := <-intCh:
 		//判断通道是否已关闭
 		if !ok {
 			fmt.Println("The candidate case is closed.")

@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-var channels = [3]chan int {
+var chArr = [3]chan int{
 	nil,
 	make(chan int),
 	nil,
 }
 
-var numbers = []int {1, 2, 3}
+var numbers = []int{1, 2, 3}
 
 func main() {
 	select {
@@ -30,5 +30,5 @@ func getNumber(i int) int {
 
 func getChannel(i int) chan int {
 	fmt.Printf("channels[%d]\n", i)
-	return channels[i]
+	return chArr[i]
 }
